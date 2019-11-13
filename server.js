@@ -16,13 +16,7 @@ const typeDefs = gql`
         rocket_name: String
         rocket_type: String
     }
-
-    # type Rocket {
-    #     id: String
-    #     name: String
-    #     type: String
-    # }
-
+    
     type Query {
         getAllLaunches: [Launch]
         getAllRockets: [Rocket]
@@ -52,14 +46,18 @@ const resolvers = {
             return data;
         }
     },
-
-    Launch: {
-        launch_date_local: () => { return "***********"; }
-    }
 }
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
-server.listen().then(({ url }) => {
+// const app = express();
+
+// server.applyMiddleware({ app });
+
+// app.listen({ port: 3000 }, () =>
+//     console.log(`🚀 Server ready at http://localhost:3000${server.graphqlPath}`)
+// );
+
+server.listen({ port: process.env.PORT || 4000, exclusive: true }).then(({ url }) => {
     console.log(`🚀  Server ready at ${url} 🚀`);
 });
