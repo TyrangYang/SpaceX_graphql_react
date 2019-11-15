@@ -6,7 +6,7 @@ This is an sample application to practice Apollo Server and React.
 
 This app is deployed on Heroku.
 
-`https://spacex-apollo-sever.herokuapp.com/`
+https://spacex-apollo-sever.herokuapp.com/
 
 ## Acknowledge
 
