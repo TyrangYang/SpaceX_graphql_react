@@ -1,12 +1,14 @@
 # SpaceX Launch
 
-This is an sample application to practice Apollo Server and React.
+This is a sample application to practice Apollo Server and React.
 
 ## Deploy
 
 This app is deployed on Heroku.
 
 https://spacex-apollo-sever.herokuapp.com/
+
+> Somehow not work on Safari.
 
 ## Acknowledge
 
