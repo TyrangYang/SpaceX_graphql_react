@@ -8,8 +8,6 @@ This app is deployed on Heroku.
 
 https://spacex-apollo-sever.herokuapp.com/
 
-> Somehow not work on Safari.
-
 ## Acknowledge
 
 This application is design by [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA).
