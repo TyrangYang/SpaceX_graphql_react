@@ -57,12 +57,12 @@ const app = express();
 server.applyMiddleware({ app });
 
 app.use('/public', express.static(path.join(__dirname, 'public')))
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
     return res.sendFile(__dirname + "/public/index.html");
 })
 
-app.listen({ port: 4000 }, () =>
-    console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+app.listen({ port: process.env.PORT || 4000 }, () =>
+    console.log(`🚀 Server ready `)
 );
 
 // server.listen({ port: process.env.PORT || 4000, exclusive: true }).then(({ url }) => {
