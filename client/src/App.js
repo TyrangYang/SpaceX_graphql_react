@@ -8,8 +8,7 @@ import Launches from './components/Launches';
 import LaunchDetail from './components/LaunchDetail';
 
 const client = new ApolloClient({
-    // uri: 'https://spacex-apollo-sever.herokuapp.com'
-    uri: "http://localhost:4000/"
+    uri: "/graphql"
 });
 
 function App() {

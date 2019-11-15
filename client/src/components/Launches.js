@@ -24,11 +24,13 @@ export class Launches extends Component {
                 <Query query={LAUNCHES_QUERY}>
                     {
                         ({ loading, error, data }) => {
+                            console.log(data);
                             if (error) console.log(error);
                             if (loading) return <h4>loading...</h4>;
                             else {
                                 return <div>
                                     {
+                                        data.getAllLaunches &&
                                         data.getAllLaunches.map((each) => (
                                             <LaunchItem key={each.flight_number} launch={each} ></LaunchItem>
                                         ))

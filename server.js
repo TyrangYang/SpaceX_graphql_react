@@ -1,5 +1,7 @@
-const { ApolloServer, gql } = require("apollo-server");
+const { ApolloServer, gql } = require("apollo-server-express");
 const axios = require('axios');
+const express = require('express');
+const path = require('path')
 
 const typeDefs = gql`
     type Launch {
@@ -50,14 +52,19 @@ const resolvers = {
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
-// const app = express();
+const app = express();
 
-// server.applyMiddleware({ app });
+server.applyMiddleware({ app });
 
-// app.listen({ port: 3000 }, () =>
-//     console.log(`🚀 Server ready at http://localhost:3000${server.graphqlPath}`)
-// );
+app.use('/public', express.static(path.join(__dirname, 'public')))
+app.get("/", (req, res) => {
+    return res.sendFile(__dirname + "/public/index.html");
+})
 
-server.listen({ port: process.env.PORT || 4000, exclusive: true }).then(({ url }) => {
-    console.log(`🚀  Server ready at ${url} 🚀`);
-});
+app.listen({ port: 4000 }, () =>
+    console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+);
+
+// server.listen({ port: process.env.PORT || 4000, exclusive: true }).then(({ url }) => {
+//     console.log(`🚀  Server ready at ${url} 🚀`);
+// });
