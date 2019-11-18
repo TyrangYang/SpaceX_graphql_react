@@ -3,6 +3,9 @@ const axios = require('axios');
 const express = require('express');
 const path = require('path')
 
+let LaunchData = [];
+let RocketData = [];
+
 const typeDefs = gql`
     type Launch {
         flight_number: Int
@@ -62,7 +65,7 @@ app.get("/", (_req, res) => {
 })
 
 app.listen({ port: process.env.PORT || 4000 }, () =>
-    console.log(`🚀 Server ready `)
+    console.log(`🚀 Server ready 🚀`)
 );
 
 // server.listen({ port: process.env.PORT || 4000, exclusive: true }).then(({ url }) => {
