@@ -3,8 +3,10 @@ const axios = require('axios');
 const express = require('express');
 const path = require('path')
 
-let LaunchData = [];
-let RocketData = [];
+// let LaunchData = [];
+// let RocketData = [];
+
+const deployPort = 8081;
 
 const typeDefs = gql`
     type Launch {
@@ -60,11 +62,11 @@ const app = express();
 server.applyMiddleware({ app });
 
 app.use('/public', express.static(path.join(__dirname, 'public')))
-app.get("/", (_req, res) => {
+app.get("/*", (_req, res) => {
     return res.sendFile(__dirname + "/public/index.html");
 })
 
-app.listen({ port: process.env.PORT || 4000 }, () =>
+app.listen({ port: process.env.PORT || deployPort }, () =>
     console.log(`🚀 Server ready 🚀`)
 );
 

@@ -7,9 +7,14 @@ import './App.css';
 import Launches from './components/Launches';
 import LaunchDetail from './components/LaunchDetail';
 
+
+// const deployUrl = "http://spacexlunchrecord-env.etbpm3jw6e.us-east-2.elasticbeanstalk.com";
+// const deployUrl = "https://spacex-lunch-record.appspot.com";
+
 const client = new ApolloClient({
     // uri: "/graphql"
     uri: "http://localhost:4000/graphql"
+    // uri: `${deployUrl}/graphql`
 });
 
 function App() {

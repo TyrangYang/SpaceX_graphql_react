@@ -33,7 +33,7 @@ export class Launches extends Component {
                                         data.getAllLaunches &&
                                         data.getAllLaunches.map((each) => (
                                             <LaunchItem key={each.flight_number} launch={each} ></LaunchItem>
-                                        ))
+                                        )).reverse()
                                     }
                                 </div>;
                             }
