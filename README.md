@@ -10,7 +10,8 @@ https://spacex-apollo-sever.herokuapp.com/
 
 New deployment
 
-On AWS: SpacexLunchRecord-env.etbpm3jw6e.us-east-2.elasticbeanstalk.com
+On AWS: http://SpacexLunchRecord-env.etbpm3jw6e.us-east-2.elasticbeanstalk.com
+
 on Google cloud: https://spacex-lunch-record.appspot.com/
 
 ## Acknowledge
